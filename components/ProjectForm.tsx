@@ -9,6 +9,7 @@ import { createProject } from "@/lib/action";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { toast } from "sonner";
+import { Send } from "lucide-react";
 
 const ProjectForm = () => {
   const [details, setDetails] = useState("");
@@ -138,8 +139,9 @@ const ProjectForm = () => {
           <p className="project-form_error">{errors.details}</p>
         )}
       </div>
-      <Button type="submit" className="project-form_btn text-white">
-        Submit Your Project
+      <Button type="submit" className="project-form_btn text-white" disabled={isPending}>
+        {isPending ? "Submitting..." : "Submit Your Project" }
+        <Send className="size-5 , ml-2"/>
       </Button>
     </form>
   );
