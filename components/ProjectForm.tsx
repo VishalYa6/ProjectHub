@@ -25,8 +25,8 @@ const ProjectForm = () => {
       };
       await formSchema.parseAsync(formValues);
       const result = await createProject(prevState, formData, details);
-      if (result.status == "SUCCESS") {
-        toast.success("Succes", {
+      if (result.status == "Success") {
+        toast("Success", {
           
           description: "✅ Success: Your project has been created successfully!",
         });
