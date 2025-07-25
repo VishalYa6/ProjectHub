@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+
 import { Boxes } from "@/components/ui/background-boxes";
 import SearchForm from "@/components/SearchForm";
 import { ThreeDCardDemo } from "@/components/ThreeDCard";
@@ -13,7 +13,7 @@ export default async function Home({searchParams} :{
   const query = (await searchParams).query;
   const params = {search : query || null};
   const session = await auth;
-  console.log(session?.id);
+  console.log(session?._id);
 
 
   const {data : posts} = await sanityFetch({query : PROJECT_QUERY, params})
