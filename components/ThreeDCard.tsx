@@ -10,7 +10,7 @@ export function ThreeDCardDemo({post} : {post : ProjectTypeCard}) {
    const{_createdAt, views , author , title, category , _id, description, image} = post;
 
   return (
-    <CardContainer className="inter-var h-[27rem]">
+    <CardContainer className="inter-var h-[22rem]">
       <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[25rem] h-[30rem] rounded-xl p-6 border  ">
         <CardItem
           translateZ="50"
@@ -21,7 +21,7 @@ export function ThreeDCardDemo({post} : {post : ProjectTypeCard}) {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-2"
         >
           {description}
         </CardItem>
@@ -41,8 +41,8 @@ export function ThreeDCardDemo({post} : {post : ProjectTypeCard}) {
         <div className="flex justify-between items-center mt-20">
           <CardItem
             translateZ={20}
-            as="a"
-            href="https://twitter.com/mannupaaji"
+            as={Link}
+            href={`/user/${post.author?._id}`}
             target="__blank"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >

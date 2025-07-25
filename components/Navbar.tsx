@@ -18,7 +18,7 @@ const Navbar = async() => {
         {
           session && session?.user ? (
             <>
-                   <Link href="/">
+                   <Link href="/project/create">
               <span className="text-6 font-sans max-sm:hidden">
                 Create
               </span>

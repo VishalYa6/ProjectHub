@@ -1,7 +1,12 @@
+import { auth } from '@/auth';
 import ProjectForm from '@/components/ProjectForm'
+import { redirect } from 'next/navigation';
+
 import React from 'react'
 
-const Create = () => {
+const Create = async () => {
+  const session = await auth();
+  if(!session) redirect("/");
   return (
     <>
         <section className='form_container !min-h-[230px]'>
